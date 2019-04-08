@@ -1,0 +1,63 @@
+{
+    "type": "object",
+    "required": [
+      "page",
+      "per_page",
+      "total",
+      "total_pages",
+      "data"
+    ],
+    "properties": {
+      "page": {
+        "$id": "#/properties/page",
+        "type": "number"
+      },
+      "per_page": {
+        "$id": "#/properties/per_page",
+        "type": "number"
+      },
+      "total": {
+        "$id": "#/properties/total",
+        "type": "number"
+      },
+      "total_pages": {
+        "$id": "#/properties/total_pages",
+        "type": "number"
+      },
+      "data": {
+        "$id": "#/properties/data",
+        "type": "array",
+        "items": {
+          "$id": "#/properties/data/items",
+          "type": "object",
+          "required": [
+            "id",
+            "first_name",
+            "last_name",
+            "avatar"
+          ],
+          "properties": {
+            "id": {
+              "$id": "#/properties/data/items/properties/id",
+              "type": "number"
+            },
+            "first_name": {
+              "$id": "#/properties/data/items/properties/first_name",
+              "type": "string",
+              "pattern": "^(.*)$"
+            },
+            "last_name": {
+              "$id": "#/properties/data/items/properties/last_name",
+              "type": "string",
+              "pattern": "^(.*)$"
+            },
+            "avatar": {
+              "$id": "#/properties/data/items/properties/avatar",
+              "type": "string",
+              "pattern": "^(.*)$"
+            }
+          }
+        }
+      }
+    }
+  }
