@@ -1,0 +1,20 @@
+.idea/
+.vscode/
+results/
+pythonlibs/__pycache__/
+keywords/transactionId
+result
+*.DS_Store
+*.pyc
+venv
+# results
+*.html
+*.xml
+*.png
+*.log
+pythonlibs/__pycache__/utils.cpython-36.pyc
+insert_test_data_for_bank.robot
+insert_test_data_for_bank.yaml
+create_payment_test_data.robot
+eod_payment_data.yaml
+testcases/util/e2e_bank_data.yaml

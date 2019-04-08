@@ -1,6 +1,6 @@
 *** Settings ***
 Documentation    Example
-Resource    ./../keywords/api/example_keywords.robot
+Resource    ./../keywords/example_keywords.robot
 
 *** Variables ***
 ${schema_example}    example_schema.json

@@ -1,5 +1,8 @@
 *** Settings ***
 Documentation    Suite description
+Library     RequestsLibrary
+Library     json
+Library     JSONSchemaLibrary
 
 *** Variables ***
 ${api_host}     https://reqres.in/api/users?
@@ -13,13 +16,13 @@ user has some data
 ###==== Actions ====###
 call to API
     [Documentation]     call to endpoint
-    log to console    URL: ${api_host} \n
-    create session  getUser  ${api_host}
+    log to console    \n-URL: ${api_host} \n
+    create session  getUser  ${api_host}    verify=True
     # ${headers}=  Create Dictionary   Content-Type=application/json     Authorization=Bearer
     # ${data}=  Create Dictionary   thaiId=${thaiId}  makroId=${makroId}  tmnId=${tmnId}   kycLevel=${kycLevel}    consentDiscloseInfo=${consentDiscloseInfo}  consentPayment=${consentPayment}    consentTermCondition=${consentTermCondition}     selfDeclare=${selfDeclare}  phoneNumber=${phoneNumber}    email=${email}
     ${response}=    Get Request     getUser  /   # data=${data}   headers=${headers}
-    log to console    Response:     ${response}
     set test variable    ${response}    ${response}
+    Log To Console     \n-Response:\n${response.json()}
 
 ###==== Validate And Asserts ====###
 verify response schema '${schema}'
